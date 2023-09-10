@@ -54,7 +54,7 @@ Ideal for optimization problems with multiple local optima. The probabilistic ac
 	- 
 	Of course! Here's the description in a markdown format within a code box:
 
-# A Real-World Use Cases
+# A Real-World Use Case
 
 ## Traveling Salesman Problem (TSP)
 
