@@ -6,6 +6,37 @@ using System.Threading.Tasks;
 
 namespace SimulatedAnnealing
 {
+    /// <summary>
+    /// Represents an implementation of the Simulated Annealing optimization algorithm. 
+    /// Simulated Annealing is a probabilistic technique used for finding an approximate 
+    /// solution to an optimization problem. The algorithm is inspired by the annealing 
+    /// process in metallurgy, where material is heated and then cooled to remove defects, 
+    /// leading to a more optimized structure.
+    /// </summary>
+    /// <remarks>
+    /// Key Features:
+    /// 1. Temperature Schedule: The class begins with an initial high temperature, which 
+    ///    allows for a higher probability of accepting worse solutions. Over time, this 
+    ///    temperature is reduced, decreasing the chance of accepting sub-optimal solutions. 
+    ///    This behavior aids the algorithm in exploring the solution space initially and 
+    ///    then refining the search as it progresses.
+    /// 2. Neighbor Generation: For a given solution, the algorithm produces a neighbor 
+    ///    solution with slight variations. This is done to explore the surrounding solution space.
+    /// 3. Acceptance Criteria: The decision to move from one solution to a neighbor is not 
+    ///    just based on improvement in the objective function but also on the current temperature 
+    ///    and the difference between the current and new solution's objective values.
+    /// 4. Flexibility: The class can be used for various optimization problems by providing 
+    ///    appropriate objective functions. It has parameters to control the starting and ending 
+    ///    temperatures, as well as the number of iterations, allowing users to customize the 
+    ///    annealing process according to their specific problem.
+    /// 
+    /// Usage:
+    /// This class is especially useful for optimization problems where the solution space has 
+    /// multiple local optima, and there's a risk of a greedy algorithm getting stuck in a sub-optimal 
+    /// solution. By introducing a probabilistic acceptance criteria, Simulated Annealing can 
+    /// potentially escape local optima and explore other regions of the solution space, increasing 
+    /// the chance of finding or getting closer to the global optimum.
+    /// </remarks>
     public class Annealer
     {
         private static Random rnd = new Random();
