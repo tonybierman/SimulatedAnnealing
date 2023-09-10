@@ -5,6 +5,9 @@ namespace SimulatedAnnealing.Tests
     {
         private const double Tolerance = 1e-2; // This is the allowed difference between expected and actual result due to the random nature of the algorithm.
 
+        /// <summary>
+        /// Tests if the Annealer can find the minimum value (which is 0) for a simple quadratic function.
+        /// </summary>
         [TestMethod]
         public void Test_Annealer_Minimum_Of_Quadratic_Function()
         {
@@ -20,6 +23,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(Math.Abs(solution * solution - expectedMinimum) <= Tolerance, $"Expected a value near {expectedMinimum} but got {solution * solution} instead.");
         }
 
+        /// <summary>
+        /// Tests the Annealer's ability to find the minimum with a very high start temperature.
+        /// </summary>
         [TestMethod]
         public void Test_High_Start_Temperature()
         {
@@ -28,6 +34,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(Math.Abs(solution * solution) <= Tolerance);
         }
 
+        /// <summary>
+        /// Tests the Annealer's behavior with a low start temperature. This is expected to provide limited exploration.
+        /// </summary>
         [TestMethod]
         public void Test_Low_Start_Temperature()
         {
@@ -39,6 +48,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(solution >= double.MinValue && solution <= double.MaxValue, $"Invalid solution value: {solution}");
         }
 
+        /// <summary>
+        /// Tests the Annealer's ability to refine its solution with a very low end temperature.
+        /// </summary>
         [TestMethod]
         public void Test_Low_End_Temperature()
         {
@@ -47,6 +59,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(Math.Abs(solution * solution) <= Tolerance);
         }
 
+        /// <summary>
+        /// Tests the Annealer's behavior when provided with a negative initial solution.
+        /// </summary>
         [TestMethod]
         public void Test_Negative_Initial_Solution()
         {
@@ -55,6 +70,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(Math.Abs(solution * solution) <= Tolerance);
         }
 
+        /// <summary>
+        /// Tests the Annealer's behavior with a very small number of iterations, expecting it to possibly not find the optimal solution.
+        /// </summary>
         [TestMethod]
         public void Test_Small_Number_Of_Iterations()
         {
@@ -63,6 +81,9 @@ namespace SimulatedAnnealing.Tests
             Assert.IsTrue(Math.Abs(solution * solution) > Tolerance);
         }
 
+        /// <summary>
+        /// Tests the Annealer's performance with a very large number of iterations, expecting it to get closer to the optimal solution.
+        /// </summary>
         [TestMethod]
         public void Test_Large_Number_Of_Iterations()
         {
