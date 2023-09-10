@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulatedAnnealing", "SimulatedAnnealing\SimulatedAnnealing.csproj", "{4BE7D32D-3433-44A9-9B85-F4E5BD9127F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulatedAnnealing.Tests", "SimulatedAnnealing.Tests\SimulatedAnnealing.Tests.csproj", "{3BB5EBCE-4394-4A90-886C-A77B10915578}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BE7D32D-3433-44A9-9B85-F4E5BD9127F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE7D32D-3433-44A9-9B85-F4E5BD9127F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE7D32D-3433-44A9-9B85-F4E5BD9127F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE7D32D-3433-44A9-9B85-F4E5BD9127F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB5EBCE-4394-4A90-886C-A77B10915578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB5EBCE-4394-4A90-886C-A77B10915578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB5EBCE-4394-4A90-886C-A77B10915578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB5EBCE-4394-4A90-886C-A77B10915578}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54BC0E19-2EC8-4F8D-8997-4205277ECA48}
+	EndGlobalSection
+EndGlobal
