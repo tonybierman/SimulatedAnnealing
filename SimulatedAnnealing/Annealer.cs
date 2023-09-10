@@ -45,6 +45,12 @@ namespace SimulatedAnnealing
         public double EndTemperature { get; set; }
         public int MaxIterations { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Annealer"/> class.
+        /// </summary>
+        /// <param name="startTemperature">The initial temperature for the annealing process.</param>
+        /// <param name="endTemperature">The final temperature for the annealing process.</param>
+        /// <param name="maxIterations">The maximum number of iterations for the annealing process.</param>
         public Annealer(double startTemperature, double endTemperature, int maxIterations)
         {
             StartTemperature = startTemperature;
@@ -52,6 +58,12 @@ namespace SimulatedAnnealing
             MaxIterations = maxIterations;
         }
 
+        /// <summary>
+        /// Solves the optimization problem using the simulated annealing algorithm.
+        /// </summary>
+        /// <param name="objectiveFunction">The function to be minimized.</param>
+        /// <param name="startSolution">The initial solution for the optimization problem.</param>
+        /// <returns>The best found solution after performing simulated annealing.</returns>
         public double Solve(Func<double, double> objectiveFunction, double startSolution)
         {
             double currentSolution = startSolution;
@@ -83,6 +95,14 @@ namespace SimulatedAnnealing
             return bestSolution;
         }
 
+        /// <summary>
+        /// Determines whether to accept the new solution.
+        /// </summary>
+        /// <param name="currentSolution">The current solution.</param>
+        /// <param name="newSolution">The new candidate solution.</param>
+        /// <param name="temperature">The current temperature.</param>
+        /// <param name="objectiveFunction">The function to be minimized.</param>
+        /// <returns>True if the new solution should be accepted, false otherwise.</returns>
         private bool ShouldAccept(double currentSolution, double newSolution, double temperature, Func<double, double> objectiveFunction)
         {
             double currentEnergy = objectiveFunction(currentSolution);
@@ -96,6 +116,11 @@ namespace SimulatedAnnealing
             return rnd.NextDouble() < acceptanceProbability;
         }
 
+        /// <summary>
+        /// Generates a neighboring solution based on the current solution.
+        /// </summary>
+        /// <param name="currentSolution">The current solution.</param>
+        /// <returns>The neighboring solution.</returns>
         private double Neighbour(double currentSolution)
         {
             // This method generates a neighbouring solution based on the current solution.
@@ -105,6 +130,11 @@ namespace SimulatedAnnealing
             return currentSolution + offset;
         }
 
+        /// <summary>
+        /// Calculates the temperature for the current iteration.
+        /// </summary>
+        /// <param name="iteration">The current iteration.</param>
+        /// <returns>The calculated temperature.</returns>
         private double Temperature(int iteration)
         {
             // Linear decay of temperature
